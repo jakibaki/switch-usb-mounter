@@ -4,7 +4,7 @@ This can mount your switches sd-card on your computer over usb.
 
 This is **very much** a work in progress, please don't post it on gbatemp yet, I'll make a post myself once it's ready. I'm just 'releasing' this no so no duplications of efforts happen. Once it's done it will probably be under the 2168-0002 label.
 
-To use you need Python3, Fuse (winfsp works on windows, osxfuse on macOS) and pyusb.
+To use you need Python3, Fuse (winfsp works on windows, osxfuse on macOS) and the pip-packages libusb and pyusb.
 
 On Windows you need to download and run Zadig from https://zadig.akeo.ie/, run the homebrew on your switch and plug it in and then select and install the libusbK driver for the libnx-device.
 
