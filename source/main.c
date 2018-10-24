@@ -363,7 +363,7 @@ int main(int argc, char **argv)
     Result ret;
 
     printf("Calling usbCommsInitialize()...\n");
-    ret = usbCommsInitialize(NULL);
+    ret = usbCommsInitialize();
 
     if (R_SUCCEEDED(ret))
     {
