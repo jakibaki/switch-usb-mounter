@@ -8,6 +8,7 @@
 #include <malloc.h>
 #include <switch.h>
 #include <sys/stat.h>
+#include <malloc.h>
 
 #define MIN(a, b) (((a) < (b)) ? (a) : (b))
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
@@ -57,10 +58,10 @@ size_t transport_safe_write(const void *buffer, size_t size)
     return size;
 }
 
-#define RW_BUF_SIZE 2048
+#define RW_BUF_SIZE 0x10000
 #define PATH_LEN 1024
 
-unsigned char pkg_buf[RW_BUF_SIZE];
+unsigned char* pkg_buf;
 
 void __getattr_handler()
 {
@@ -355,6 +356,7 @@ Result usb_loop(void)
 
 int main(int argc, char **argv)
 {
+    pkg_buf = memalign(0x1000, RW_BUF_SIZE);
     socketInitializeDefault();
 
     gfxInitDefault();
